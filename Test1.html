@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        .options {
+            margin-left: 20px;
+        }
+        .correct {
+            color: green;
+            font-weight: bold;
+        }
+        .incorrect {
+            color: red;
+            font-weight: bold;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Online Quiz</h2>
+
+    <div id="quiz"></div>
+
+    <button onclick="submitQuiz()">Submit Quiz</button>
+    <h3 id="result"></h3>
+    <div id="answers"></div>
+
+    <script>
+        const questions = [
+            {
+                text: "The suture line between two parietal bones is called:",
+                options: ["Coronal", "Lambdoidal", "Frontal", "Sagittal"],
+                answer: "Sagittal"
+            },
+            {
+                text: "Wilms tumor is associated with:",
+                options: ["Polycystic kidney", "Renal dysplasia", "Renal hypoplasia", "Horse-shoe kidney"],
+                answer: "Horse-shoe kidney"
+            },
+            {
+                text: "The most common complication of Tuberculous meningitis is:",
+                options: ["Encephalitis", "Subdural empyema", "Hydrocephalus", "Brain abscess"],
+                answer: "Hydrocephalus"
+            },
+            {
+                text: "A person who is kind, quiet, submissive, sympathetic, and gloomy has:",
+                options: ["Melancholic personality", "Narcissistic personality", "Cyclothymic personality", "Histrionic personality"],
+                answer: "Melancholic personality"
+            }
+        ];
+
+        function loadQuiz() {
+            let quizContainer = document.getElementById("quiz");
+            quizContainer.innerHTML = "";
+            questions.forEach((q, index) => {
+                let questionDiv = document.createElement("div");
+                questionDiv.classList.add("question");
+                questionDiv.innerHTML = `<strong>Q${index + 1}: ${q.text}</strong>`;
+                
+                let optionsDiv = document.createElement("div");
+                optionsDiv.classList.add("options");
+
+                q.options.forEach(option => {
+                    let optionInput = document.createElement("input");
+                    optionInput.type = "radio";
+                    optionInput.name = `q${index}`;
+                    optionInput.value = option;
+
+                    let optionLabel = document.createElement("label");
+                    optionLabel.innerText = option;
+
+                    optionsDiv.appendChild(optionInput);
+                    optionsDiv.appendChild(optionLabel);
+                    optionsDiv.appendChild(document.createElement("br"));
+                });
+
+                questionDiv.appendChild(optionsDiv);
+                quizContainer.appendChild(questionDiv);
+            });
+        }
+
+        function submitQuiz() {
+            let score = 0;
+            let answersDiv = document.getElementById("answers");
+            answersDiv.innerHTML = "<h3>Marked Answers and Correct Answers:</h3>";
+
+            questions.forEach((q, index) => {
+                let selectedOption = document.querySelector(`input[name="q${index}"]:checked`);
+                let selectedValue = selectedOption ? selectedOption.value : "Not Answered";
+                let correctness = selectedValue === q.answer ? "correct" : "incorrect";
+
+                if (selectedValue === q.answer) {
+                    score++;
+                }
+
+                answersDiv.innerHTML += `
+                    <p class="${correctness}">Q${index + 1}: ${q.text} <br>
+                    Your answer: <strong>${selectedValue}</strong> <br>
+                    Correct answer: <strong>${q.answer}</strong></p>
+                `;
+            });
+
+            document.getElementById("result").innerText = `Your Score: ${score}/${questions.length}`;
+        }
+
+        window.onload = loadQuiz;
+    </script>
+
+</body>
+</html>
