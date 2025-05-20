@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Test 19</title>
+    <title>Test 20</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -35,7 +35,7 @@
 </head>
 <body>
 
-    <h2>Online Quiz</h2>
+    <h2>Medical Quiz</h2>
 
     <div id="quiz"></div>
 
@@ -44,66 +44,59 @@
 
     <script>
         const questions = [
-{
-                text: "The suture line between two parietal bones is called:",
-                options: ["Coronal", "Lambdoidal", "Frontal", "Sagittal"],
-                answer: "Sagittal"
+            {
+                text: "A patient can become toxic on a normal dose of digitalis when ________ is present.",
+                options: ["Hyperkalemia", "Hypertension", "Hypokalemia", "Hypotension"],
+                answer: "Hypokalemia"
             },
             {
-                text: "Wilms tumor is associated with:",
-                options: ["Polycystic kidney", "Renal dysplasia", "Renal hypoplasia", "Horse-shoe kidney"],
-                answer: "Horse-shoe kidney"
+                text: "If the activities done by people are repeated by a patient, it is called?",
+                options: ["Echolalia", "Hyperactivity", "Compulsion", "Echopraxia"],
+                answer: "Echopraxia"
             },
             {
-                text: "The most common complication of Tuberculous meningitis is:",
-                options: ["Encephalitis", "Subdural empyema", "Hydrocephalus", "Brain abscess"],
-                answer: "Hydrocephalus"
+                text: "The most important cause of diarrhea in infants and children is:",
+                options: ["Escherichia coli", "Rota virus", "Salmonella", "Vibrio cholerae"],
+                answer: "Rota virus"
             },
             {
-                text: "A person who is kind, quiet, submissive, sympathetic, and gloomy has:",
-                options: ["Melancholic personality", "Narcissistic personality", "Cyclothymic personality", "Histrionic personality"],
-                answer: "Melancholic personality"
+                text: "Bagassosis is caused by inhalation of:",
+                options: ["Sugar-cane dust", "Cotton dust", "Coal dust", "Silica dust"],
+                answer: "Sugar-cane dust"
             },
             {
-                text: "Guillain-Barre' syndrome is manifested with:",
-                options: [
-                    "Muscle atrophy and persistent reflexes",
-                    "Symmetric muscle weakness, diminished reflexes and paresthesia",
-                    "Muscle atrophy, convulsions and behavioral problems",
-                    "Symmetric muscle weakness, increased tone and persistent reflexes"
-                ],
-                answer: "Symmetric muscle weakness, diminished reflexes and paresthesia"
+                text: "Normal PR interval in ECG is:",
+                options: ["0.20 - 0.35 sec", "0.30 - 0.45 sec", "0.35 - 0.40 sec", "0.12 - 0.20 sec"],
+                answer: "0.12 - 0.20 sec"
             },
             {
-                text: "Bryant's traction is indicated in:",
-                options: ["Fractures of femur", "Fractures of humerus", "Spinal fractures", "Fractures of radius"],
-                answer: "Fractures of femur"
+                text: "The antidote to warfarin is:",
+                options: ["Heparin", "Vitamin K", "Vitamin B12", "Iron"],
+                answer: "Vitamin K"
             },
             {
-                text: "Which of the following methods in health communication helps to perform a skill?",
-                options: ["Lecture", "Demonstration", "Seminar", "Symposium"],
-                answer: "Demonstration"
+                text: "What is the normal CSF pressure when the individual is lying on his side?",
+                options: ["15 cm H2O", "20 cm H2O", "10 cm H2O", "25 cm H2O"],
+                answer: "10 cm H2O"
             },
-            {
-                text: "Salk vaccine is given for the prevention of:",
-                options: ["Measles", "Mumps", "Polio", "Rabies"],
-                answer: "Polio"
-            },
-			    {
-        text: "Which is the most common cancer associated with AIDS?",
-        options: ["Leukemia", "Adeno carcinoma", "Osteo sarcoma", "Kaposi's sarcoma"],
-        answer: "Kaposi's sarcoma"
+          
+           {
+        text: "Immunization of DPT should be administered by:",
+        options: ["Intradermal", "Intramuscular", "Subcutaneous", "Intravenous"],
+        answer: "Intramuscular"
     },
     {
-        text: "Bleeding due to the premature separation of a normally situated placenta is called:",
-        options: ["Placenta praevia", "Incidental haemorrhage", "Post partum haemorrhage", "Abruptio placentae"],
-        answer: "Abruptio placentae"
+        text: "Which among the following drugs is used in the treatment of alcohol dependence?",
+        options: ["Disulfiram", "Lithium", "Carbamazepine", "Verapamil"],
+        answer: "Disulfiram"
+    },
+    {
+        text: "Insertion of a needle into the pleural cavity is:",
+        options: ["Endoscopy", "Paracentesis", "Thoracentesis", "Evisceration"],
+        answer: "Thoracentesis"
     }
 
-
-			
         ];
-
 
         function loadQuiz() {
             let quizContainer = document.getElementById("quiz");
@@ -182,7 +175,7 @@
             // Hide quiz content after submission (expires in 5 seconds)
             setTimeout(() => {
                 document.body.innerHTML = "<h2 style='color: red; text-align: center;'>This Quiz Has Expired!</h2>";
-            }, 15000);
+            }, 5000);
         }
 
         window.onload = loadQuiz;
