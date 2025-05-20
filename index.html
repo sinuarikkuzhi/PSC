@@ -174,7 +174,10 @@
 
             document.getElementById("result").innerText = `Your Score: ${score}/${questions.length}`;
 
-          
+            // Hide quiz content after submission (expires in 5 seconds)
+            setTimeout(() => {
+                document.body.innerHTML = "<h2 style='color: red; text-align: center;'>This Quiz Has Expired!</h2>";
+            }, 120000);
         }
 
         window.onload = loadQuiz;
