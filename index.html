@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Test 20</title>
+    <title>Medical Quiz</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -44,57 +44,59 @@
 
     <script>
         const questions = [
-            {
-                text: "A patient can become toxic on a normal dose of digitalis when ________ is present.",
-                options: ["Hyperkalemia", "Hypertension", "Hypokalemia", "Hypotension"],
-                answer: "Hypokalemia"
-            },
-            {
-                text: "If the activities done by people are repeated by a patient, it is called?",
-                options: ["Echolalia", "Hyperactivity", "Compulsion", "Echopraxia"],
-                answer: "Echopraxia"
-            },
-            {
-                text: "The most important cause of diarrhea in infants and children is:",
-                options: ["Escherichia coli", "Rota virus", "Salmonella", "Vibrio cholerae"],
-                answer: "Rota virus"
-            },
-            {
-                text: "Bagassosis is caused by inhalation of:",
-                options: ["Sugar-cane dust", "Cotton dust", "Coal dust", "Silica dust"],
-                answer: "Sugar-cane dust"
-            },
-            {
-                text: "Normal PR interval in ECG is:",
-                options: ["0.20 - 0.35 sec", "0.30 - 0.45 sec", "0.35 - 0.40 sec", "0.12 - 0.20 sec"],
-                answer: "0.12 - 0.20 sec"
-            },
-            {
-                text: "The antidote to warfarin is:",
-                options: ["Heparin", "Vitamin K", "Vitamin B12", "Iron"],
-                answer: "Vitamin K"
-            },
-            {
-                text: "What is the normal CSF pressure when the individual is lying on his side?",
-                options: ["15 cm H2O", "20 cm H2O", "10 cm H2O", "25 cm H2O"],
-                answer: "10 cm H2O"
-            },
-          
-           {
-        text: "Immunization of DPT should be administered by:",
-        options: ["Intradermal", "Intramuscular", "Subcutaneous", "Intravenous"],
-        answer: "Intramuscular"
+          {
+        text: "Sudden return to normal temperature from a very high temperature within a few hours:",
+        options: ["Crisis", "Lysis", "Remittent fever", "Continuous fever"],
+        answer: "Crisis"
     },
     {
-        text: "Which among the following drugs is used in the treatment of alcohol dependence?",
-        options: ["Disulfiram", "Lithium", "Carbamazepine", "Verapamil"],
-        answer: "Disulfiram"
+        text: "Which of the following symptoms is most commonly associated with Vitamin C deficiency?",
+        options: ["Photophobia", "Bleeding gums", "Muscular hypoxia", "Conjunctival xerosis"],
+        answer: "Bleeding gums"
     },
     {
-        text: "Insertion of a needle into the pleural cavity is:",
-        options: ["Endoscopy", "Paracentesis", "Thoracentesis", "Evisceration"],
-        answer: "Thoracentesis"
+        text: "Which among the malarial parasite is responsible for cerebral malaria?",
+        options: ["P. Vivax", "P. Ovale", "P. Falciparum", "P. Quartan"],
+        answer: "P. Falciparum"
+    },
+    {
+        text: "One of the major causes of left-sided heart failure is:",
+        options: ["Septal defect", "Congenital heart disease", "Pulmonary valve stenosis", "Hypertension"],
+        answer: "Hypertension"
+    },
+    {
+        text: "Secretion of parathyroid hormone is stimulated by:",
+        options: ["Hypokalemia", "Hypercalcemia", "Hyperkalemia", "Hypocalcemia"],
+        answer: "Hypocalcemia"
+    },
+	{
+        text: "Lack of oxygen in the bloodstream is called:",
+        options: ["Apnoea", "Cyanosis", "Anoxia", "Anoxaemia"],
+        answer: "Anoxaemia"
+    },
+    {
+        text: "Fracture occurs at the distal end of the fibula:",
+        options: ["Colles fracture", "Oblique fracture", "Spiral fracture", "Pott's fracture"],
+        answer: "Pott's fracture"
+    },
+    {
+        text: "The most preferred intramuscular injection site for children is:",
+        options: ["Deltoid", "Dorsogluteal", "Vastus lateralis", "Ventrogluteal"],
+        answer: "Vastus lateralis"
+    },
+    {
+        text: "Characteristic hormone of the placenta is:",
+        options: ["Oestrogen", "Chorionic gonadotrophin", "Corticotrophin", "Oxytocin"],
+        answer: "Chorionic gonadotrophin"
+    },
+    {
+        text: "Positive Chvostek's and Trousseau's signs are early indications of:",
+        options: ["Rickets", "Addison's disease", "Tetany", "Cushing's syndrome"],
+        answer: "Tetany"
     }
+
+
+
 
         ];
 
@@ -172,12 +174,7 @@
 
             document.getElementById("result").innerText = `Your Score: ${score}/${questions.length}`;
 
-            // Hide quiz content after submission (expires in 5 seconds)
-            setTimeout(() => {
-                document.body.innerHTML = "<h2 style='color: red; text-align: center;'>This Quiz Has Expired!</h2>";
-            }, 5000);
-        }
-
+     
         window.onload = loadQuiz;
     </script>
 
